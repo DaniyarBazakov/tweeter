@@ -8,6 +8,7 @@ nav {
   width: 100%;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  position: fixed;
 }
 
 nav span { font-family: 'Bungee'; }
