@@ -25,10 +25,10 @@ body {
 main {
   width: 90%;
   background-color: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.container {
+  margin: 0 auto;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
