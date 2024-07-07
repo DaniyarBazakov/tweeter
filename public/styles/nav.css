@@ -1,4 +1,7 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #FFFFFF;
   background-color: #4056A1;
   height: 120px;
@@ -7,6 +10,6 @@ nav {
   padding-right: 1.5em;
 }
 
-nav span {
+.nav-title {
   font-family: 'Bungee'
 }
