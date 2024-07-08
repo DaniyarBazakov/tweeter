@@ -23,8 +23,12 @@ body {
 }
 
 main {
-  width: 90%;
-  background-color: inherit;
+  width: 100%;
+  /* background-color: inherit; */
+  background-color: #e1d4ba;
+  font-family: 'Bungee'; 
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .container {
