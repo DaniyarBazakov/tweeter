@@ -59,35 +59,6 @@
   color: #666;
 }
 
-/* main {
-  height: 400px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  color: #1a1818;
-  box-sizing: border-box;
-  background-color: #e1d4ba;
-  background-image: url(../images/header-image.png);
-  font-family: 'Bungee'; 
+.over-limit {
+  color: red;
 }
-
-.new-tweet {
-  flex-direction: column;
-}
-
-main label {
-  border-bottom: solid;
-  border-color: #1a1818;
-  font-family: "Source Sans 3", sans-serif;
-  color: rgb(162, 161, 161);
-}
-
-main button {
-  background-color: #4056A1;
-  color: white;
-}
-
-.bottom-new-tweet {
-  flex-direction: row;
-  justify-content: space-between;
-} */
