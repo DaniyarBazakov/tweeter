@@ -2,7 +2,7 @@
   background-color: #f4f1ec;
   padding: 20px;
   margin: 20px;
-  width: 80%;
+  /* width: 80%; */
 }
 
 .new-tweet h2 {
@@ -45,7 +45,6 @@
   border: none;
   border-radius: 5px;
   color: white;
-  padding: 10px 20px;
   cursor: pointer;
   font-family: 'Bungee';
 }

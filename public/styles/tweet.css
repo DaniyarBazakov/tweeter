@@ -4,6 +4,11 @@ article.tweet {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
+}
+
+article.tweet:hover {
+
 }
 
 article.tweet header {
@@ -23,7 +28,7 @@ article.tweet footer {
   margin: 20px;
 }
 
-article p {
+.tweet-text {
   border-bottom: solid;
   border-color: #1a1818;
   margin: 20px;
