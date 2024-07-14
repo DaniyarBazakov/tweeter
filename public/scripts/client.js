@@ -99,12 +99,18 @@ $(document).ready(function() {
     
     const formData = $form.serialize(); 
 
+    const formText = $(this).find("textarea").val()
+
     $.ajax({
       method: 'POST',
-      url: '/',
+      url: '/tweets',
       data: formData,
-      success: (response) => {
-        console.log(response);
+      success: function()  {
+        console.log("working")
+        console.log(formText)
+      },
+      error: function(err)  {
+        console.log(err)
       }
     });
   });
