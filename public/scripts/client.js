@@ -91,5 +91,23 @@ $(document).ready(function() {
   };
 
   renderTweets(data);
+
+  const $form = $('#tweet-submit');
+
+  $form.on('submit', (event) => {
+    event.preventDefault();
+    
+    const formData = $form.serialize(); 
+
+    $.ajax({
+      method: 'POST',
+      url: '/',
+      data: formData,
+      success: (response) => {
+        console.log(response);
+      }
+    });
+  });
+  
 });
 
