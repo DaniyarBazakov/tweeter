@@ -7,15 +7,18 @@ article.tweet {
   padding: 20px;
 }
 
-article.tweet:hover {
-
-}
-
 article.tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
+}
+
+.logo-username {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  /* padding: 20px; */
 }
 
 article.tweet footer {
