@@ -97,6 +97,8 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
+    // Clear the tweet container before rendering new tweets
+    $('.tweet-container').empty();
     // loops through tweets
     for (let tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -110,7 +112,7 @@ $(document).ready(function() {
       method: 'GET',
       url: '/tweets',
       success: (dataFromServer) => {
-        // console.log(dataFromServer);
+        console.log(dataFromServer);
         renderTweets(dataFromServer);
       }
     });
@@ -129,7 +131,7 @@ $(document).ready(function() {
 
     if(!isTweetValid(formText.length)) {
       $form.find("textarea").val('');
-      $form.find("output").val('140');
+      $form.find(".counter").text(140);
       return;
     }
 
@@ -152,6 +154,9 @@ $(document).ready(function() {
         // console.log(formData)
         // console.log(formText)
         // console.log(formText.length)
+        loadTweets();
+        $form.find("textarea").val('');
+        $form.find(".counter").text(140);
       },
       error: function(err)  {
         console.log(err)
