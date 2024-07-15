@@ -56,6 +56,20 @@ $(document).ready(function() {
     return Math.floor(seconds) + " seconds ago";
   };
   
+  const isTweetValid = function(text) {
+    if (text <= 0) {
+      alert("The textarea cannot be empty."); 
+      return false; 
+    };
+
+    if (text > 140) {
+      alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
+      return false; 
+    };
+
+    return true;
+  }
+
   const createTweetElement = function(tweet) {
     const tweetDate = new Date(tweet.created_at);
     const formattedDate = timeSince(tweetDate);
@@ -111,17 +125,23 @@ $(document).ready(function() {
     
     const formData = $form.serialize(); 
 
-    const formText = $(this).find("textarea").val()
+    const formText = $form.find("textarea").val().trim()
 
-    if (formText.length <= 0) {
-      alert("The textarea cannot be empty."); 
-      return; 
-    };
-
-    if (formText.length > 140) {
-      alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
-      return; 
+    if(!isTweetValid(formText.length)) {
+      $form.find("textarea").val('');
+      $form.find("output").val('140');
+      return;
     }
+
+    // if (formText.length <= 0) {
+    //   alert("The textarea cannot be empty."); 
+    //   return; 
+    // };
+
+    // if (formText.length > 140) {
+    //   alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
+    //   return; 
+    // }
 
     $.ajax({
       method: 'POST',
