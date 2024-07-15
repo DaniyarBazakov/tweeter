@@ -70,9 +70,16 @@ $(document).ready(function() {
     return true;
   }
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweet) {
     const tweetDate = new Date(tweet.created_at);
     const formattedDate = timeSince(tweetDate);
+    const sanitizedText = escape(tweet.content.text);
     const $tweet = $(`
       <article class="tweet">
         <header>
@@ -82,7 +89,7 @@ $(document).ready(function() {
           </div>
           <h3 class="tweet-account">${tweet.user.handle}</h3>
         </header>
-        <p class="tweet-text">${tweet.content.text}</p>
+        <p class="tweet-text">${sanitizedText}</p>
         <footer>
           <time>${formattedDate}</time>
           <div class="footer-icons">
@@ -134,16 +141,6 @@ $(document).ready(function() {
       $form.find(".counter").text(140);
       return;
     }
-
-    // if (formText.length <= 0) {
-    //   alert("The textarea cannot be empty."); 
-    //   return; 
-    // };
-
-    // if (formText.length > 140) {
-    //   alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
-    //   return; 
-    // }
 
     $.ajax({
       method: 'POST',
