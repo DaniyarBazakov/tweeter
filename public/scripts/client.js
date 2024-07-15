@@ -96,7 +96,7 @@ $(document).ready(function() {
       method: 'GET',
       url: '/tweets',
       success: (dataFromServer) => {
-        console.log(dataFromServer);
+        // console.log(dataFromServer);
         renderTweets(dataFromServer);
       }
     });
@@ -113,13 +113,25 @@ $(document).ready(function() {
 
     const formText = $(this).find("textarea").val()
 
+    if (formText.length <= 0) {
+      alert("The textarea cannot be empty."); 
+      return; 
+    };
+
+    if (formText.length > 140) {
+      alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
+      return; 
+    }
+
     $.ajax({
       method: 'POST',
       url: '/tweets',
       data: formData,
       success: function()  {
         console.log("working")
-        console.log(formText)
+        // console.log(formData)
+        // console.log(formText)
+        // console.log(formText.length)
       },
       error: function(err)  {
         console.log(err)
