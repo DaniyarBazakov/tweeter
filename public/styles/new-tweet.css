@@ -69,3 +69,14 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.error-message {
+  display: none;
+  color: #fff;
+  background-color: #f44336; 
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}

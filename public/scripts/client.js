@@ -58,12 +58,14 @@ $(document).ready(function() {
   
   const isTweetValid = function(text) {
     if (text <= 0) {
-      alert("The textarea cannot be empty."); 
+      // alert("The textarea cannot be empty."); 
+      showError("The textarea cannot be empty.");
       return false; 
     };
 
     if (text > 140) {
-      alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
+      // alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
+      showError("The textarea cannot exceed 140 characters. Please shorten your message.");
       return false; 
     };
 
@@ -127,13 +129,22 @@ $(document).ready(function() {
 
   loadTweets();
 
+  const showError = function(message) {
+    $('.error-message').text(message).slideDown();
+  };
+
+  const hideError = function() {
+    $('.error-message').slideUp();
+  };
+
   const $form = $('#tweet-submit');
 
   $form.on('submit', (event) => {
     event.preventDefault();
+
+    hideError();
     
     const formData = $form.serialize(); 
-
     const formText = $form.find("textarea").val().trim()
 
     if(!isTweetValid(formText.length)) {
