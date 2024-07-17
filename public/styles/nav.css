@@ -3,7 +3,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   color: #FFFFFF;
-  background-color: #4056A1;
+  background-color: #cf901c;
+  background-image: url(../images/header-image.png);
   height: 120px;
   width: 100%;
   padding-left: 1.5em;
@@ -22,3 +23,9 @@ nav i {color: red}
   align-items: center;
 }
 
+@media only screen and (min-width: 769px) {
+  nav  {
+    background-color: #4056A1;
+    background-image: none;
+  }
+}

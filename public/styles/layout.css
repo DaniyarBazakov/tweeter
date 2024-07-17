@@ -30,9 +30,21 @@ main {
   padding-top: 0;
 }
 
-.container {
-  margin: 0 auto;
-}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+@media only screen and (min-width: 769px) {
+  /* nav {
+    display: none;
+  } */
+  .responsive {
+    display: flex;
+    justify-content: space-evenly;;
+  }
+  main {
+    width: 55%;
+  }
+  
+}
+

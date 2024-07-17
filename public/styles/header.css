@@ -10,3 +10,11 @@ header.main-header  {
   background-color: #cf901c;
   background-image: url(../images/header-image.png);
 }
+
+
+@media only screen and (min-width: 769px) {
+  header.main-header  {
+    width: 400px;
+    margin-top: 70px;
+  }
+}

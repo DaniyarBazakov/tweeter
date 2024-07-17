@@ -58,13 +58,11 @@ $(document).ready(function() {
   
   const isTweetValid = function(text) {
     if (text <= 0) {
-      // alert("The textarea cannot be empty."); 
       showError("The textarea cannot be empty.");
       return false; 
     };
 
     if (text > 140) {
-      // alert("The textarea cannot exceed 140 characters. Please shorten your message."); 
       showError("The textarea cannot exceed 140 characters. Please shorten your message.");
       return false; 
     };
@@ -159,9 +157,6 @@ $(document).ready(function() {
       data: formData,
       success: function()  {
         console.log("working")
-        // console.log(formData)
-        // console.log(formText)
-        // console.log(formText.length)
         loadTweets();
         $form.find("textarea").val('');
         $form.find(".counter").text(140);
