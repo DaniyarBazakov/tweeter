@@ -16,3 +16,22 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- md5
+
+## Screenshots
+
+- Main page
+!["Main Page"](https://github.com/DaniyarBazakov/tweeter/blob/master/public/images/main.PNG?raw=true)
+
+- Writing Tweet
+!["Writing Tweet"](https://github.com/DaniyarBazakov/tweeter/blob/master/public/images/writing_tweet.PNG?raw=true)
+
+- Posted Tweet
+!["Posted Tweet"](https://github.com/DaniyarBazakov/tweeter/blob/master/public/images/posted_tweet.PNG?raw=true)
+
+- Error Message
+!["Error Message"](https://github.com/DaniyarBazakov/tweeter/blob/master/public/images/exed_carac.PNG?raw=true)
+
+- Tablet version
+!["Tablet version"](https://github.com/DaniyarBazakov/tweeter/blob/master/public/images/responsive.PNG?raw=true)
