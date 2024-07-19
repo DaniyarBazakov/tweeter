@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+/* Apply box-sizing: border-box to all elements */ 
 html {
   box-sizing: border-box;
 }
@@ -14,6 +16,7 @@ html {
  * Global layout stuff
  */
 
+/* Body styling: font, color, background, padding */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -22,6 +25,7 @@ body {
   padding-top: 120px;
 }
 
+/* Main content area styling */
 main {
   width: 100%;
   background-color: #f4f1ec;
@@ -34,10 +38,8 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+/* Responsive design for larger screens */
 @media only screen and (min-width: 769px) {
-  /* nav {
-    display: none;
-  } */
   .responsive {
     display: flex;
     justify-content: space-evenly;;

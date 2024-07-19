@@ -1,9 +1,11 @@
+/* Styling for the new tweet section */
 .new-tweet {
   background-color: #f4f1ec;
   padding: 20px;
   margin: 20px;
 }
 
+/* Header styling within the new tweet section */
 .new-tweet h2 {
   margin-bottom: 15px;
   text-align: center;
@@ -15,6 +17,7 @@
   flex-direction: column;
 }
 
+/* Textarea styling within the new tweet form */
 .new-tweet textarea {
   resize: none;
   padding: 10px;
@@ -33,6 +36,7 @@
   align-items: center;
 }
 
+/* Button styling within the new tweet form */
 .new-tweet button {
   background-color: #4056A1;
   border: none;
@@ -42,20 +46,24 @@
   font-family: 'Bungee';
 }
 
+/* Button hover effect within the new tweet form */
 .new-tweet button:hover {
   background-color: #005f7a;
 }
 
+/* Counter styling within the new tweet form */
 .counter {
   font-size: 14px;
   color: #666;
   font-family: 'Bungee';
 }
 
+/* Styling for the counter when over character limit */
 .over-limit {
   color: red;
 }
 
+/* Styling for the bottom section of the new tweet form */
 .bottom-new-tweet {
   display: flex;
   flex-direction: row;
@@ -63,6 +71,7 @@
   align-items: center;
 }
 
+/* Styling for error messages */
 .error-message {
   display: none;
   color: #fff;

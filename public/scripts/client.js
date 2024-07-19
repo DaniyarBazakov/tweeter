@@ -3,33 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 240000000
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
+
 
 $(document).ready(function() {
   
+  // Function to calculate the time since a given date
   const timeSince = (date) => {
     const seconds = Math.floor((new Date() - date) / 1000);
   
@@ -56,6 +34,7 @@ $(document).ready(function() {
     return Math.floor(seconds) + " seconds ago";
   };
   
+  // Function to validate tweet length
   const isTweetValid = function(text) {
     if (text <= 0) {
       showError("The textarea cannot be empty.");
@@ -70,12 +49,14 @@ $(document).ready(function() {
     return true;
   }
 
+  // Function to escape potentially unsafe characters in a string
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Function to create a tweet element
   const createTweetElement = function(tweet) {
     const tweetDate = new Date(tweet.created_at);
     const formattedDate = timeSince(tweetDate);
@@ -103,17 +84,15 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // Function to render tweets on the page
   const renderTweets = function(tweets) {
-    // Clear the tweet container before rendering new tweets
-    $('.tweet-container').empty();
-    // loops through tweets
+    $('.tweet-container').empty(); // Clear the tweet container before rendering new tweets
     for (let tweet of tweets) {
-      // calls createTweetElement for each tweet
-      // takes return value and appends it to the tweets container
-      $('.tweet-container').prepend(createTweetElement(tweet));
+      $('.tweet-container').prepend(createTweetElement(tweet)); // Append each tweet to the container
     }
   };
 
+  // Function to load tweets from the server
   const loadTweets = () => {
     $.ajax({
       method: 'GET',
@@ -125,18 +104,21 @@ $(document).ready(function() {
     });
   }
 
-  loadTweets();
+  loadTweets(); // Initial load of tweets
 
+  // Function to display error messages
   const showError = function(message) {
     $('.error-message').text(message).slideDown();
   };
 
+  // Function to hide error messages
   const hideError = function() {
     $('.error-message').slideUp();
   };
 
   const $form = $('#tweet-submit');
 
+  // Event handler for form submission
   $form.on('submit', (event) => {
     event.preventDefault();
 
@@ -149,6 +131,7 @@ $(document).ready(function() {
       return;
     }
 
+    // Ajax POST request to submit a new tweet
     $.ajax({
       method: 'POST',
       url: '/tweets',
@@ -156,8 +139,8 @@ $(document).ready(function() {
       success: function()  {
         console.log("working")
         loadTweets();
-        $form.find("textarea").val('');
-        $form.find(".counter").text(140);
+        $form.find("textarea").val(''); // Clear the textarea
+        $form.find(".counter").text(140); // Reset the counter
       },
       error: function(err)  {
         console.log(err)

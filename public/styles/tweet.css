@@ -1,3 +1,4 @@
+/* Styling for tweet article */
 article.tweet {
   border: solid black;
   margin: 20px;
@@ -7,10 +8,12 @@ article.tweet {
   padding: 20px;
 }
 
+/* Box shadow effect on hover for tweet article */
 article.tweet:hover {
   box-shadow: 10px 5px 5px #c9cae1;
 }
 
+/* Header styling within tweet article */
 article.tweet header {
   display: flex;
   flex-direction: row;
@@ -18,11 +21,13 @@ article.tweet header {
   padding: 20px;
 }
 
+/* Styling for the logo and username container */
 .logo-username {
   display: flex;
   flex-direction: row;
 }
 
+/* Footer styling within tweet article */
 article.tweet footer {
   display: flex;
   flex-direction: row;
@@ -33,6 +38,8 @@ article.tweet footer {
   margin: 20px;
 }
 
+
+/* Styling for the tweet text */
 .tweet-text {
   border-bottom: solid;
   border-color: #1a1818;
@@ -40,14 +47,17 @@ article.tweet footer {
   font-weight: bold;
 }
 
+/* Styling for icons within tweet article */
 article i {
   color: #4056A1;
 }
 
+/* Color change effect on hover for icons */
 article i:hover {
   color: #cf901c;
 }
 
+/* Styling for the tweet account handle */
 .tweet-account {
   opacity: 0.5;
 }

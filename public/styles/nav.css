@@ -1,3 +1,4 @@
+/* Styling for navigation bar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -13,16 +14,20 @@ nav {
   top: 0;
 }
 
+/* Styling for text within navigation bar */
 nav span { font-family: 'Bungee'; }
 
+/* Styling for icons within navigation bar */
 nav i {color: red}
 
+/* Styling for the new tweet section */
 .new-tweett {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Adjust navigation bar styling for larger screens */
 @media only screen and (min-width: 769px) {
   nav  {
     background-color: #4056A1;
