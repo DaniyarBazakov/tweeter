@@ -7,6 +7,10 @@ article.tweet {
   padding: 20px;
 }
 
+article.tweet:hover {
+  box-shadow: 10px 5px 5px #c9cae1;
+}
+
 article.tweet header {
   display: flex;
   flex-direction: row;

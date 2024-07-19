@@ -146,8 +146,6 @@ $(document).ready(function() {
     const formText = $form.find("textarea").val().trim()
 
     if(!isTweetValid(formText.length)) {
-      $form.find("textarea").val('');
-      $form.find(".counter").text(140);
       return;
     }
 
